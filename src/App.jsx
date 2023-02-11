@@ -4,11 +4,18 @@ import Footer from './components/Footer/Footer';
 import About from './pages/About/About';
 import IOS from './pages/IOS/IOS';
 import Android from './pages/Android/Android';
+import Landing from './pages/Landing/Landing';
 
 function App() {
   return (
   <>
   <Routes>
+    <Route
+    path="/"
+    element={
+      <Landing /> 
+    }
+    />
     <Route 
     path="/about"
     element={
