@@ -1,7 +1,9 @@
+import './Head.css'
+
 const Head = () => {
   return (
-    <div>
-      <h1>Tech Helper App</h1>
+    <div className="heading">
+      <h1 className="title">Tech Helper App</h1>
     </div>
   )
 }
