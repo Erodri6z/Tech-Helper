@@ -1,0 +1,18 @@
+footer {
+  background-color: rgb(140, 140, 140);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer-list{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.f-item{
+  text-decoration: none;
+}
