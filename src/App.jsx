@@ -5,10 +5,12 @@ import About from './pages/About/About';
 import IOS from './pages/IOS/IOS';
 import Android from './pages/Android/Android';
 import Landing from './pages/Landing/Landing';
+import Head from './components/Head/Head';
 
 function App() {
   return (
   <>
+  <Head />
   <Routes>
     <Route
     path="/"
