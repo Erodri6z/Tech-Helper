@@ -1,5 +1,6 @@
 .heading{
-  position: absolute;
+  position: relative;
+  padding: 1px;
   left: 0;
   right: 0;
   top: 0; 
