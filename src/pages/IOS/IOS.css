@@ -2,8 +2,17 @@
   padding: 10px;
   border: 3px solid black;
   border-radius: 13px;
-  width: 200px;
-  margin-top: 20px;
+  width: 250px;
+  text-align: center;
+  margin: 20px auto 0 auto;
+}
+
+.i-link{
+  text-decoration: none;
+  color: black;
+}
+
+.i-title{
   text-align: center;
 }
 

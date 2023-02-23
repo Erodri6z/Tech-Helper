@@ -3,7 +3,15 @@
   border: 3px solid black;
   border-radius: 13px;
   width: 200px;
-  margin-top: 20px;
   text-align: center;
+  margin: 20px auto 0 auto;
 }
 
+.a-link{
+  text-decoration: none;
+  color: black;
+}
+
+.a-title{
+  text-align: center;
+}

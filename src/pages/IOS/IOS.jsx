@@ -3,21 +3,19 @@ import "./IOS.css"
 const IOS = () => {
   return (
     <>
-    <h1>Hello this is where the ios Stuff will be</h1>
-    <section className="options">
+    <h1 className="i-title">Hello this is where the ios Stuff will be</h1>
       <div className="i-options">
-        <a href="#">Customization</a>
+        <a href="#" className="i-link">Customization</a>
       </div>
       <div className="i-options">
-        <a href="#">Troubleshoot</a>
+        <a href="#" className="i-link">Troubleshoot</a>
       </div>
       <div className="i-options">
-        <a href="#">Management</a>
+        <a href="#" className="i-link">Management</a>
       </div>
       <div className="i-options">
-        <a href="#">Forum</a>
+        <a href="#" className="i-link">Forum</a>
       </div>
-    </section>
     </>
   )
 }
