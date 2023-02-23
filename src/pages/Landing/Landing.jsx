@@ -1,7 +1,9 @@
+import "./Landing.css"
+
 const Landing = () => {
   return (
     <>
-    <h1>Hello this is going to be the landing page</h1>
+    <h1 className="greeting">Hello this is going to be the landing page</h1>
     <div className="home-options">
       <a href="/ios" className="landing-icons">
         <h2>
