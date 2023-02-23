@@ -1,7 +1,8 @@
 const Landing = () => {
   return (
     <>
-    <h1>Hello this is going to be the landing page</h1><div className="home-options">
+    <h1>Hello this is going to be the landing page</h1>
+    <div className="home-options">
       <a href="/ios" className="landing-icons">
         <h2>
           <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-apple" viewBox="0 0 16 16">
