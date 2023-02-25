@@ -6,6 +6,8 @@ import IOS from './pages/IOS/IOS';
 import Android from './pages/Android/Android';
 import Landing from './pages/Landing/Landing';
 import Head from './components/Head/Head';
+import AForum from './pages/Forum/AForum';
+import IForum from './pages/Forum/IForum';
 
 function App() {
   return (
@@ -35,6 +37,18 @@ function App() {
     element={
       <Android />
     } 
+    />
+    <Route
+    path='/android/forum'
+    element={
+      <AForum />
+    }
+    />
+    <Route
+    path='/ios/forum'
+    element={
+      <IForum />
+    }
     />
   </Routes>
   <Footer />

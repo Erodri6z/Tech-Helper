@@ -14,7 +14,7 @@ const Android = () => {
           <a href="#" className="a-link">Management</a>
         </div>
         <div className="a-options">
-          <a href="#" className="a-link">Forum</a>
+          <a href="android/forum" className="a-link">Forum</a>
         </div>
     </>
   )

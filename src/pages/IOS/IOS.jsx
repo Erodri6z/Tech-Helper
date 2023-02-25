@@ -14,7 +14,7 @@ const IOS = () => {
         <a href="#" className="i-link">Management</a>
       </div>
       <div className="i-options">
-        <a href="#" className="i-link">Forum</a>
+        <a href="/ios/forum" className="i-link">Forum</a>
       </div>
     </>
   )
