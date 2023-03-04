@@ -1,5 +1,8 @@
 import './App.css';
-import { Route, Routes } from 'react-router';
+import React, { useEffect, useState } from 'react'
+import { Route, Routes, useNavigate } from 'react-router';
+import * as profileService from './services/profileService';
+import * as authService from './services/authService';
 import Footer from './components/Footer/Footer';
 import About from './pages/About/About';
 import IOS from './pages/IOS/IOS';
@@ -10,6 +13,21 @@ import AForum from './pages/Forum/AForum';
 import IForum from './pages/Forum/IForum';
 
 function App() {
+  const [user, setUser] = useState(authService.getUser())
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    authService.logout()
+    setUser(null)
+    navigate('/')
+  }
+
+
+  const handleSignupOrLogin = () => {
+    setUser(authService.getUser())
+  }
+
+
   return (
   <>
   <Head />
