@@ -53,7 +53,7 @@ function App() {
     <Route
     path='/android'
     element={
-      <Android />
+      <Android user={user}/>
     } 
     />
     <Route
