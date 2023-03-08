@@ -31,7 +31,7 @@ function App() {
 
   return (
   <>
-  <Head user={user}/>
+  <Head user={user} handleLogout={handleLogout}/>
   <Routes>
     <Route
     path="/"
