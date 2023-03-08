@@ -31,7 +31,7 @@ function App() {
 
   return (
   <>
-  <Head />
+  <Head user={user}/>
   <Routes>
     <Route
     path="/"

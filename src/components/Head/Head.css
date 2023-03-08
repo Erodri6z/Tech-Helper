@@ -1,6 +1,7 @@
 .heading{
   position: relative;
   padding: 1px;
+  display: flex;
   left: 0;
   right: 0;
   top: 0; 
