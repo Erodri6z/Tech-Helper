@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Route, Routes, useNavigate } from 'react-router';
 import * as profileService from './services/profileService';
 import * as authService from './services/authService';
+import Signup from './pages/Signup/Signup'
 import Footer from './components/Footer/Footer';
 import About from './pages/About/About';
 import IOS from './pages/IOS/IOS';
@@ -35,7 +36,7 @@ function App() {
     <Route
     path="/"
     element={
-      <Landing /> 
+      <Landing user={user} /> 
     }
     />
     <Route 
@@ -43,6 +44,10 @@ function App() {
     element={
     <About />
     }
+    />
+    <Route
+    path="/signup"
+    element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
     />
     <Route
     path='/ios'
