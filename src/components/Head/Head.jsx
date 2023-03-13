@@ -10,7 +10,10 @@ const Head = ({user, handleLogout}) => {
       {user?
       <li><Link to="" onClick={handleLogout}>Logout</Link></li>
       :
-      <><li><Link to="/signup">Sign Up</Link></li><li><Link to="/login">Log In</Link></li></>
+      <>
+      <li><Link to="/signup" >Sign Up</Link></li>
+      <li><Link to="/login" >Log In</Link></li>
+      </>
       }
     </div>
   </>
