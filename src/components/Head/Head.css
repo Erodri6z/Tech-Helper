@@ -8,3 +8,18 @@
   background-color: blueviolet;
   text-align: center;
 }
+
+.title{
+  margin: auto;
+  padding: 10px;
+}
+
+.signon {
+  text-decoration: none;
+  color: black;
+  justify-content: left;
+}
+li{
+  margin: auto;
+  list-style: none;
+}

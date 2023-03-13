@@ -4,16 +4,16 @@ import styles from './LoginForm.module.css'
 import * as authService from '../../services/authService'
 
 const LoginForm = props => {
-
   const [formData, setFormData] = useState({
     email: '',
     pw: '',
   })
+
   const navigate = useNavigate()
 
-  const handleChange = evt => {
-    props.updateMesage('')
-    setFormData({...formData, [evt.target.name]: evt.target.value })
+  const handleChange = e => {
+    props.updateMessage('')
+    setFormData({ ...formData, [e.target.name] : e.target.value })
   }
 
   const handleSubmit = async evt => {
@@ -23,7 +23,7 @@ const LoginForm = props => {
       props.handleSignupOrLogin()
       navigate('/')
     } catch (err) {
-      props.updateMesage(err.message)
+      props.updateMessage(err.message)
     }
   }
 
@@ -64,4 +64,5 @@ const LoginForm = props => {
     </form>
   )
 }
+
 export default LoginForm

@@ -8,11 +8,11 @@ const Head = ({user, handleLogout}) => {
     <div className="heading">
       <h1 className="title">Tech Helper App</h1>
       {user?
-      <li><Link to="" onClick={handleLogout}>Logout</Link></li>
+      <li className='logout'><Link to="" onClick={handleLogout}>Logout</Link></li>
       :
       <>
-      <li><Link to="/signup" >Sign Up</Link></li>
-      <li><Link to="/login" >Log In</Link></li>
+      <li ><Link className='signon' to="/signup" >Sign Up</Link></li>
+      <li ><Link className='signon' to="/login" >Log In</Link></li>
       </>
       }
     </div>
