@@ -2,7 +2,8 @@ import './App.css';
 import React, { useEffect, useState } from 'react'
 import { Route, Routes, useNavigate } from 'react-router';
 // import * as profileService from './services/profileService';
-import * as authService from './services/authService';
+import * as authService from './services/authService'
+import * as postService from './services/postService'
 import Signup from './pages/Signup/Signup'
 import Footer from './components/Footer/Footer';
 import About from './pages/About/About';
@@ -16,7 +17,7 @@ import Login from './pages/Login/Login';
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
-
+  const [posts, setPosts] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -24,6 +25,14 @@ function App() {
     setUser(null)
     navigate('/')
   }
+
+  useEffect(() => {
+    const fetchAllNotes = async () => {
+      const postsData = await postService.getAll()
+      setPosts(postsData)
+    }
+    fetchAllNotes()
+  }, [])
 
 
   const handleSignupOrLogin = () => {
@@ -72,13 +81,17 @@ function App() {
     <Route
     path='/android/forum'
     element={
-      <AForum />
+      <AForum
+      posts={posts}
+      />
     }
     />
     <Route
     path='/ios/forum'
     element={
-      <IForum />
+      <IForum
+      posts={posts}
+      />
     }
     />
   </Routes>
