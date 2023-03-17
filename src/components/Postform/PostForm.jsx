@@ -1,3 +1,6 @@
+import { Navigate } from "react-router-dom"
+import React, { useState } from 'react'
+
 const PostForm = (props) => {
   const [formData, setFormData] = useState({
     question: '',
@@ -13,7 +16,7 @@ const PostForm = (props) => {
     e.preventDefault()
     try{
       props.handleAddNote(formData)
-      Navigate('/journal')
+      Navigate('/')
     }catch (err) {
       console.log(err)
     }
