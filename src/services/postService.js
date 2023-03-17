@@ -9,6 +9,19 @@ async function getAll() {
   return await res.json()
 }
 
+async function create(post) {
+  const res = await fetch(BASE_URL, {
+    method: "POST",
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(post)
+  })
+  return await res.json()
+}
+
 export {
-  getAll
+  getAll,
+  create
 }
