@@ -27,16 +27,21 @@ function App() {
   }
 
   useEffect(() => {
-    const fetchAllNotes = async () => {
+    const fetchAllPosts = async () => {
       const postsData = await postService.getAll()
       setPosts(postsData)
     }
-    fetchAllNotes()
+    fetchAllPosts()
   }, [])
 
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const handleAddPost = async (newPostData) => {
+    const newPost = await postService.create(newPostData)
+    setPosts([...posts, newPost])
   }
 
 
@@ -82,6 +87,7 @@ function App() {
     path='/android/forum'
     element={
       <AForum
+      handleAddPost={handleAddPost}
       posts={posts}
       />
     }

@@ -1,22 +1,23 @@
-import { Navigate } from "react-router-dom"
+
 import React, { useState } from 'react'
 
 const PostForm = (props) => {
   const [formData, setFormData] = useState({
     question: '',
     elaboration:'',
-    os: '',
+    os: ''
   })
+
   const handleChange = (e) => {
     setFormData({...formData,
-      [e.target.name] : e.target.value})
+      [e.target.name] : e.target.value
+    })
   }
 
   const handleSubmit = async e => {
     e.preventDefault()
     try{
-      props.handleAddNote(formData)
-      Navigate('/')
+      props.handleAddPost(formData)
     }catch (err) {
       console.log(err)
     }
@@ -24,19 +25,20 @@ const PostForm = (props) => {
 
   return(
     <div className="post-entry">
-      <form onSubmit={handleSubmit}>
+      <form autoComplete="off" onSubmit={handleSubmit}>
         <label>
           <p>Whats on your mind?</p>
         </label>
-        <input type="text" name="question" id="question-box" />
+        <input type="text" name="question" id="question-box" onChange={handleChange}/>
         <label>
           <p>Elaborate</p>
         </label>
-        <input type="text" name="elaboration" is="elaboration-box" />
-        <select name="os" id="os-select">
+        <input type="text" name="elaboration" is="elaboration-box" onChange={handleChange}/>
+        <select name="os" id="os-select" onChange={handleChange}>
           <option value="IOS">IOS</option>
           <option value="ANDROID">Android</option>
         </select>
+        <button>Submit</button>
       </form>
     </div>
   )

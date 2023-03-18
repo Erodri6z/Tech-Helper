@@ -9,14 +9,14 @@ async function getAll() {
   return await res.json()
 }
 
-async function create(post) {
+async function create(note) {
   const res = await fetch(BASE_URL, {
-    method: "POST",
+    method: 'POST',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(post)
+    body: JSON.stringify(note)
   })
   return await res.json()
 }
