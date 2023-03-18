@@ -96,6 +96,7 @@ function App() {
     path='/ios/forum'
     element={
       <IForum
+      handleAddPost={handleAddPost}
       posts={posts}
       />
     }
