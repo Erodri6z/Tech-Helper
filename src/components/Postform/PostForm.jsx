@@ -1,11 +1,21 @@
-
+import './PostForm.css'
 import React, { useState } from 'react'
 
 const PostForm = (props) => {
+  const checkPage = () => {
+    console.log('this' ,window.location.href)
+    if (`${window.location.href}` === 'http://localhost:3000/ios/forum') {
+      return 'IOS'
+    }
+    else {
+      return 'ANDROID'
+    }
+  }
+
   const [formData, setFormData] = useState({
     question: '',
     elaboration:'',
-    os: ''
+    os: checkPage()
   })
 
   const handleChange = (e) => {
@@ -25,7 +35,7 @@ const PostForm = (props) => {
 
   return(
     <div className="post-entry">
-      <form autoComplete="off" onSubmit={handleSubmit}>
+      <form autoComplete="off" className='form' onSubmit={handleSubmit}>
         <label>
           <p>Whats on your mind?</p>
         </label>
@@ -34,7 +44,7 @@ const PostForm = (props) => {
           <p>Elaborate</p>
         </label>
         <input type="text" name="elaboration" is="elaboration-box" onChange={handleChange}/>
-        <select name="os" id="os-select" onChange={handleChange}>
+        <select name="os" id="os-select" onChange={handleChange} value='aaa'>
           <option value="IOS">IOS</option>
           <option value="ANDROID">Android</option>
         </select>
