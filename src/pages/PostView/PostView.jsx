@@ -8,11 +8,11 @@ const PostView = () => {
 
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const postData = await getPost(posts._id)
+      const postData = await getPost(location.state.p._id)
       setPosts(postData)
     }
     fetchPostDetails(posts)
-  }, [posts._id])
+  }, [location.state.p._id])
 
   return(
     <>
