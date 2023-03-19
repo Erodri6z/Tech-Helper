@@ -1,6 +1,23 @@
+import { useLocation } from "react-router"
+import React, { useEffect, useState } from "react"
+import { getPost } from '../../services/postService'
+
 const PostView = () => {
+  const [posts, setPosts] = useState([])
+  const location = useLocation()
+
+  useEffect(() => {
+    const fetchPostDetails = async () => {
+      const postData = await getPost(posts._id)
+      setPosts(postData)
+    }
+    fetchPostDetails(posts)
+  }, [posts._id])
+
   return(
-    <h1>This will be where the post will be</h1>
+    <>
+    <h1>{location.state.p.question}</h1>
+    </>
   )
 }
 
