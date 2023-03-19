@@ -44,10 +44,6 @@ const PostForm = (props) => {
           <p>Elaborate</p>
         </label>
         <input type="text" name="elaboration" is="elaboration-box" onChange={handleChange}/>
-        <select name="os" id="os-select" onChange={handleChange} value='aaa'>
-          <option value="IOS">IOS</option>
-          <option value="ANDROID">Android</option>
-        </select>
         <button>Submit</button>
       </form>
     </div>
