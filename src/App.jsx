@@ -13,6 +13,7 @@ import Landing from './pages/Landing/Landing';
 import Head from './components/Head/Head';
 import AForum from './pages/Forum/AForum';
 import IForum from './pages/Forum/IForum';
+import PostView from './pages/PostView/PostView';
 import Login from './pages/Login/Login';
 
 function App() {
@@ -100,6 +101,15 @@ function App() {
       posts={posts}
       />
     }
+    />
+    <Route
+      path='/post'
+      element={
+        <PostView
+        posts={posts}
+        user={user}
+        />
+      }
     />
   </Routes>
   <Footer />

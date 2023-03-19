@@ -21,7 +21,15 @@ async function create(note) {
   return await res.json()
 }
 
+async function getPost(postId) {
+  const res = await fetch(`${BASE_URL}/${postId}`,{
+    headers: { Authorization: `Bearer ${tokenService.getToken()}`},
+  })
+  return await res.json()
+}
+
 export {
   getAll,
-  create
+  create,
+  getPost
 }
