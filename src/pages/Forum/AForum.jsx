@@ -15,6 +15,7 @@ const AForum = (props) => {
         <h4>{p.question}</h4>
         <p>{p.elaboration}</p>
       </div>
+      <hr />
     </Link>
     )}
     </>

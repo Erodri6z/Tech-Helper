@@ -5,18 +5,24 @@ import { getPost } from '../../services/postService'
 const PostView = () => {
   const [posts, setPosts] = useState([])
   const location = useLocation()
+  const thisPost = location.state.p
+
 
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const postData = await getPost(location.state.p._id)
+      const postData = await getPost(thisPost._id)
       setPosts(postData)
     }
     fetchPostDetails(posts)
-  }, [location.state.p._id])
+  }, [thisPost._id])
 
   return(
     <>
-    <h1>{location.state.p.question}</h1>
+    <div className="post-view">
+      <h2>{thisPost.poster.name}</h2>
+      <h3>{thisPost.question}</h3>
+      <p>{thisPost.elaboration}</p>
+    </div>
     </>
   )
 }
