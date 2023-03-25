@@ -45,6 +45,12 @@ function App() {
     setPosts([...posts, newPost])
   }
 
+  const handleDeletePost = async postId => {
+    const deletedPost = await postService.deletePost(postId)
+    const newPostArray = posts.filter(post => post._id !== deletedPost._id)
+    setPosts(newPostArray)
+  }
+
 
   return (
   <>
@@ -108,6 +114,7 @@ function App() {
         <PostView
         posts={posts}
         user={user}
+        handleDeletePost={handleDeletePost}
         />
       }
     />
