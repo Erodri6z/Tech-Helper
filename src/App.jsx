@@ -49,6 +49,7 @@ function App() {
     const deletedPost = await postService.deletePost(postId)
     const newPostArray = posts.filter(post => post._id !== deletedPost._id)
     setPosts(newPostArray)
+    navigate(-1)
   }
 
 
