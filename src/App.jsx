@@ -15,6 +15,7 @@ import AForum from './pages/Forum/AForum';
 import IForum from './pages/Forum/IForum';
 import PostView from './pages/PostView/PostView';
 import Login from './pages/Login/Login';
+import PostEdit from './pages/PostEdit/PostEdit';
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -116,6 +117,15 @@ function App() {
         posts={posts}
         user={user}
         handleDeletePost={handleDeletePost}
+        />
+      }
+    />
+    <Route
+      path='/post-edit'
+      element={
+        <PostEdit
+        posts={posts}
+        user={user}
         />
       }
     />

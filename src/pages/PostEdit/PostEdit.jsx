@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
 const PostEdit = (props) => {
-  const location = useLocation
+  const location = useLocation()
   const [formData, setFormData] = useState(location.state.thisPost)
 
 
@@ -27,11 +27,11 @@ const PostEdit = (props) => {
         <label>
           <p>Whats on your mind?</p>
         </label>
-        <input type="text" name="question" id="question-box" onChange={handleChange}/>
+        <input type="text" name="question" value={formData.question} id="question-box" onChange={handleChange}/>
         <label>
           <p>Elaborate</p>
         </label>
-        <input type="text" name="elaboration" is="elaboration-box" onChange={handleChange}/>
+        <input type="text" name="elaboration" id="elaboration-box" value={formData.elaboration}  onChange={handleChange}/>
         <button>Submit</button>
       </form>
     </div>
