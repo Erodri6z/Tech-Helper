@@ -1,6 +1,7 @@
 import { useLocation } from "react-router"
 import React, { useEffect, useState } from "react"
 import { getPost } from '../../services/postService'
+import { Link } from "react-router-dom"
 
 const PostView = (props) => {
   const [posts, setPosts] = useState([])
@@ -22,6 +23,9 @@ const PostView = (props) => {
       <h2>{thisPost.poster.name}</h2>
       <h3>{thisPost.question}</h3>
       <p>{thisPost.elaboration}</p>
+      <Link to='/post-edit' state={{ thisPost }}>
+        <button>Edit</button>
+      </Link>
       <button onClick={() => props.handleDeletePost(thisPost._id)}>Delete</button>
     </div>
     </>
