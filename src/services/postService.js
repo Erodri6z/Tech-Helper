@@ -36,9 +36,22 @@ async function getPost(postId) {
   return await res.json()
 }
 
+async function updatePost(postData) {
+  const res = await fetch(`${BASE_URL}/${postData._id}`,{
+    method : 'PUT',
+    headers : {
+      'Authorization' : `Bearer ${tokenService.getToken()}`,
+      'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify(postData)
+  })
+  return await res.json()
+}
+
 export {
   getAll,
   create,
   getPost,
-  deletePost
+  deletePost,
+  updatePost
 }
