@@ -15,7 +15,7 @@ const PostEdit = (props) => {
   const handleSubmit = async e => {
     e.preventDefault()
     try{
-      props.handleAddPost(formData)
+      props.handleUpdatePost(formData)
     }catch (err) {
       console.log(err)
     }

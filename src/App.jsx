@@ -53,6 +53,15 @@ function App() {
     navigate(-1)
   }
 
+  const handleUpdatePost = async (postData) => {
+    const updatedPost = await postService.updatePost(postData)
+    const newPostArray = posts.map(
+      post => post._id === updatedPost._id ?
+      updatedPost : post
+    )
+    setPosts(newPostArray)
+    navigate(-2)
+  }
 
   return (
   <>
@@ -124,8 +133,7 @@ function App() {
       path='/post-edit'
       element={
         <PostEdit
-        posts={posts}
-        user={user}
+        handleUpdatePost={handleUpdatePost}
         />
       }
     />
