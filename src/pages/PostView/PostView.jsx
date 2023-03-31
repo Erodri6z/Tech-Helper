@@ -23,10 +23,18 @@ const PostView = (props) => {
       <h2>{thisPost.poster.name}</h2>
       <h3>{thisPost.question}</h3>
       <p>{thisPost.elaboration}</p>
-      <Link to='/post-edit' state={{ thisPost }}>
-        <button>Edit</button>
-      </Link>
-      <button onClick={() => props.handleDeletePost(thisPost._id)}>Delete</button>
+      {
+        props.user.profile === thisPost.poster._id ?
+        <>
+        <Link to='/post-edit' state={{ thisPost }}>
+            <button>Edit</button>
+        </Link>
+        <button onClick={() => props.handleDeletePost(thisPost._id)}>Delete</button>
+        </>
+      :
+      <h1>this isnt you post</h1>
+      }
+      
     </div>
     </>
   )
