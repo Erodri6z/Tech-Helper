@@ -1,3 +1,10 @@
 .form{
-  display: flex;
+  border: 2px solid black;
+  padding: 6px
+}
+
+#elaboration-box {
+  width: 40%;
+  padding: 10px;
+  resize: none;
 }

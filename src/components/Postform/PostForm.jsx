@@ -40,10 +40,12 @@ const PostForm = (props) => {
           <p>Whats on your mind?</p>
         </label>
         <input type="text" name="question" id="question-box" onChange={handleChange}/>
-        <label>
-          <p>Elaborate</p>
-        </label>
-        <input type="text" name="elaboration" is="elaboration-box" onChange={handleChange}/>
+        <br />
+        {/* <label> */}
+          {/* <p>Elaborate</p> */}
+        {/* </label> */}
+        <textarea type="text" name="elaboration" id="elaboration-box" onChange={handleChange}/>
+        <br />
         <button>Submit</button>
       </form>
     </div>
