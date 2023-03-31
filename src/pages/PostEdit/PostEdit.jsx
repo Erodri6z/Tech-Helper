@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import '../../components/Postform/PostForm.css'
+
 
 const PostEdit = (props) => {
   const location = useLocation()
@@ -22,17 +24,16 @@ const PostEdit = (props) => {
   }
   return(
     <>
-      <div className="post-entry">
+      <div className="post-edit">
       <form autoComplete="off" className='form' onSubmit={handleSubmit}>
         <label>
           <p>Whats on your mind?</p>
         </label>
         <input type="text" name="question" value={formData.question} id="question-box" onChange={handleChange}/>
-        <label>
-          <p>Elaborate</p>
-        </label>
-        <input type="text" name="elaboration" id="elaboration-box" value={formData.elaboration}  onChange={handleChange}/>
-        <button>Submit</button>
+        <br />
+        <textarea type="text" name="elaboration" id="elaboration-box" value={formData.elaboration} onChange={handleChange}/>
+        <br />
+        <button className='submit-button'>Submit</button>
       </form>
     </div>
     </>
