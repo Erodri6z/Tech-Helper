@@ -107,6 +107,7 @@ function App() {
       <AForum
       handleAddPost={handleAddPost}
       posts={posts}
+      user={user}
       />
     }
     />
@@ -114,6 +115,7 @@ function App() {
     path='/ios/forum'
     element={
       <IForum
+      user={user}
       handleAddPost={handleAddPost}
       posts={posts}
       />

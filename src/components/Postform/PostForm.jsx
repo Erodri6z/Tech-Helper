@@ -43,7 +43,7 @@ const PostForm = (props) => {
         <br />
         <textarea type="text" name="elaboration" id="elaboration-box" onChange={handleChange}/>
         <br />
-        <button>Submit</button>
+        <button id='submit-button'>Submit</button>
       </form>
     </div>
   )

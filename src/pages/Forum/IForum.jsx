@@ -7,7 +7,11 @@ const IForum = (props) => {
   return (
     <>
     <h1>IOS Forum</h1>
+    { props.user ?
     <PostForm handleAddPost={props.handleAddPost}/>
+    :
+    <h4>Want to post?</h4>
+    }
       {posts.map(p => 
       <Link to='/post' key={p._id} state={{ p }}>
       <div key={p._id}>
