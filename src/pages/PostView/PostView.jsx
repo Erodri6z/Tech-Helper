@@ -2,6 +2,7 @@ import { useLocation } from "react-router"
 import React, { useEffect, useState } from "react"
 import { getPost } from '../../services/postService'
 import { Link } from "react-router-dom"
+import CommentForm from "../../components/CommentForm/CommentForm"
 
 const PostView = (props) => {
   const [posts, setPosts] = useState([])
@@ -34,7 +35,7 @@ const PostView = (props) => {
       :
       <h1>this isnt you post</h1>
       }
-      
+      <CommentForm handleCreateComment={props.handleCreateComment}/>
     </div>
     </>
   )

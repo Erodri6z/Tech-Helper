@@ -16,6 +16,7 @@ import IForum from './pages/Forum/IForum';
 import PostView from './pages/PostView/PostView';
 import Login from './pages/Login/Login';
 import PostEdit from './pages/PostEdit/PostEdit';
+import CommentForm from './components/CommentForm/CommentForm';
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
