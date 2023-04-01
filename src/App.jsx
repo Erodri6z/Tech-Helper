@@ -20,6 +20,7 @@ import PostEdit from './pages/PostEdit/PostEdit';
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [posts, setPosts] = useState([])
+  const [comments, setComments] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -63,6 +64,11 @@ function App() {
     navigate(-2)
   }
 
+  const handleCreateComment = async (newCommentData) => {
+    const newComment = await newComment.create(newCommentData)
+    setComments([...comments, newComment])
+  }
+
   return (
   <>
   <Head user={user} handleLogout={handleLogout}/>
@@ -92,7 +98,7 @@ function App() {
     <Route
     path='/ios'
     element={
-      <IOS />
+      <IOS user={user} />
     }
     />
     <Route
@@ -128,6 +134,7 @@ function App() {
         posts={posts}
         user={user}
         handleDeletePost={handleDeletePost}
+        handleCreateComment={handleCreateComment}
         />
       }
     />
