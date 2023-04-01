@@ -48,10 +48,23 @@ async function updatePost(postData) {
   return await res.json()
 }
 
+async function createComment(postId, formData) {
+  const res = await fetch(`${BASE_URL}/${postId}`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-type' : "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+  return await res.json()
+}
+
 export {
   getAll,
   create,
   getPost,
   deletePost,
-  updatePost
+  updatePost,
+  createComment
 }
