@@ -35,7 +35,10 @@ const PostView = (props) => {
       :
       <h1>this isnt you post</h1>
       }
-      <CommentForm handleCreateComment={props.handleCreateComment}/>
+      <CommentForm 
+      handleCreateComment={props.handleCreateComment}
+      user={props.user}
+      post={thisPost}/>
     </div>
     </>
   )

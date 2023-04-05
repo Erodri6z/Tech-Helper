@@ -1,9 +1,9 @@
 
-import { useState } from "react"
+import React, { useState } from "react"
 
 const CommentForm = (props) => {
   const [formData, setFormData] = useState({
-    text: '',
+    text: ''
   })
 
   const handleChange = (e)=> {
@@ -12,7 +12,8 @@ const CommentForm = (props) => {
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault()
-    const newPost = props.handleCreateComment(props.user.profile, formData)
+    const newPost = props.handleCreateComment(props.post._id, formData)
+    console.log(newPost)
   }
 
 

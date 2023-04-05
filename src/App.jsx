@@ -66,7 +66,7 @@ function App() {
   }
 
   const handleCreateComment = async (newCommentData) => {
-    const newComment = await newComment.create(newCommentData)
+    const newComment = await postService.createComment(newCommentData)
     setComments([...comments, newComment])
   }
 

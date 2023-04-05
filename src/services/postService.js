@@ -57,6 +57,7 @@ async function createComment(postId, formData) {
     },
     body: JSON.stringify(formData)
   })
+  console.log(postId)
   return await res.json()
 }
 
