@@ -2,26 +2,33 @@
 import React, { useState } from "react"
 
 const CommentForm = (props) => {
+  
   const [formData, setFormData] = useState({
-    text: ''
+    text: '',
   })
 
-  const handleChange = (e)=> {
-    setFormData({...formData, [e.target.name]: e.target.value})
+  const handleChange = (evt) => {
+    setFormData({...formData,
+      [evt.target.name] : evt.target.value
+    })
   }
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault()
-    const newPost = props.handleCreateComment(props.post._id, formData)
-    console.log(newPost)
+    try{
+      props.handleCreateComment(props.post._id, formData)
+    }catch (err) {
+      console.log(err)
+    }
   }
 
+  console.log(formData)
 
   return (
     <>
     <div>
       <form autoComplete="off" onSubmit={handleCommentSubmit}>
-        <textarea type="text" id="comment-box" name="text" onChange={handleChange}/>
+        <textarea type="text" id="comment-box" name="text"  onChange={handleChange}/>
         <button type="submit">Submit</button>
       </form>
     </div>
