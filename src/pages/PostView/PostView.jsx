@@ -5,18 +5,17 @@ import { Link } from "react-router-dom"
 import CommentForm from "../../components/CommentForm/CommentForm"
 
 const PostView = (props) => {
-  const [posts, setPosts] = useState([])
+  const [post, setPost] = useState([])
   const location = useLocation()
-  const thisPost = location.state.p
-
+  const thisPost = post
 
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const postData = await getPost(thisPost._id)
-      setPosts(postData)
+      const postData = await getPost(location.state.p._id)
+      setPost(postData)
     }
-    fetchPostDetails(posts)
-  }, [thisPost._id])
+    fetchPostDetails(post)
+  },[thisPost._id])
 
   return(
     <>
@@ -43,7 +42,7 @@ const PostView = (props) => {
       {thisPost.comment.length > 0?
       thisPost.comment.map(c => 
         <div>
-          <h4>{c.author}</h4>
+          <h4>{c.author.name}</h4>
           <p>{c.text}</p>
         </div>
       )
