@@ -39,6 +39,18 @@ const PostView = (props) => {
       handleCreateComment={props.handleCreateComment}
       user={props.user}
       post={thisPost}/>
+
+      {thisPost.comment.length > 0?
+      thisPost.comment.map(c => 
+        <div>
+          <h4>{c.author}</h4>
+          <p>{c.text}</p>
+        </div>
+      )
+      :
+      <h1>no comments</h1>
+      }
+
     </div>
     </>
   )
