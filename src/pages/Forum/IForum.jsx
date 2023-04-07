@@ -12,7 +12,7 @@ const IForum = (props) => {
     :
     <h4>Want to post?</h4>
     }
-      {posts.map(p => 
+      {iosPosts.map(p => 
       <Link to='/post' key={p._id} state={{ p }}>
       <div key={p._id}>
         <h3>{p.poster.name}</h3>

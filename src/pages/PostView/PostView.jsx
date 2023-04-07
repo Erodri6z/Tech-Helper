@@ -20,11 +20,11 @@ const PostView = (props) => {
   return(
     <>
     <div className="post-view">
-      <h2>{thisPost.poster.name}</h2>
+      <h2>{location.state.p.poster.name}</h2>
       <h3>{thisPost.question}</h3>
       <p>{thisPost.elaboration}</p>
       {
-        props.user.profile === thisPost.poster._id ?
+        props.user.profile === location.state.p.poster._id ?
         <>
         <Link to='/post-edit' state={{ thisPost }}>
             <button>Edit</button>
@@ -39,9 +39,9 @@ const PostView = (props) => {
       user={props.user}
       post={thisPost}/>
 
-      {thisPost.comment.length > 0?
+      {thisPost.comment?
       thisPost.comment.map(c => 
-        <div>
+        <div key={c._id}>
           <h4>{c.author.name}</h4>
           <p>{c.text}</p>
         </div>
