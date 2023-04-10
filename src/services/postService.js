@@ -60,8 +60,8 @@ async function createComment(postId, formData) {
   return await res.json()
 }
 
-async function deleteComment(commentId) {
-  const res = await fetch(`${BASE_URL}/post/${commentId}`,{
+async function deleteComment(postId, commentId) {
+  const res = await fetch(`${BASE_URL}/${postId}/${commentId}`,{
     method: 'DELETE',
     headers: {
       'Authorization': `Bearer ${tokenService.getToken()}`,
