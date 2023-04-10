@@ -70,6 +70,7 @@ function App() {
     setComments([...comments, newComment])
   }
 
+
   return (
   <>
   <Head user={user} handleLogout={handleLogout}/>
