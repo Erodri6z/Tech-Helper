@@ -60,11 +60,23 @@ async function createComment(postId, formData) {
   return await res.json()
 }
 
+async function deleteComment(commentId) {
+  const res = await fetch(`${BASE_URL}/post/${commentId}`,{
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type' : 'application/json'
+    },
+  })
+  return await res.json()
+}
+
 export {
   getAll,
   create,
   getPost,
   deletePost,
   updatePost,
-  createComment
+  createComment,
+  deleteComment
 }
