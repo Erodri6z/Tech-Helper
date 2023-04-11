@@ -16,12 +16,11 @@ import IForum from './pages/Forum/IForum';
 import PostView from './pages/PostView/PostView';
 import Login from './pages/Login/Login';
 import PostEdit from './pages/PostEdit/PostEdit';
-import CommentForm from './components/CommentForm/CommentForm';
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [posts, setPosts] = useState([])
-  const [comments, setComments] = useState([])
+
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -67,7 +66,10 @@ function App() {
 
   const handleCreateComment = async (postId, commentData) => {
     const newComment = await postService.createComment(postId, commentData)
-    setComments([...comments, newComment])
+    setPosts(posts.map(
+      post => post._id === newComment._id ?
+      newComment : post
+    ))
   }
 
 

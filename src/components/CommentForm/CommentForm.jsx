@@ -21,6 +21,7 @@ const CommentForm = (props) => {
       console.log(err)
     }
   }
+  console.log(props.post._id)
 
   console.log(formData)
 

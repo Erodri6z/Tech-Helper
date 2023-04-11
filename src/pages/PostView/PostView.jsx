@@ -8,30 +8,35 @@ import CommentForm from "../../components/CommentForm/CommentForm"
 const PostView = (props) => {
   const [post, setPost] = useState([])
   const location = useLocation()
-  const thisPost = post
-
+  const idx = props.post.indexOf(post => post._id === location.state.p._id)
+  const thisPost = props.post[-idx]
+  
   useEffect(() => {
     const fetchPostDetails = async () => {
       const postData = await getPost(location.state.p._id)
       setPost(postData)
     }
     fetchPostDetails(post)
-  },[thisPost._id])
+  },[location.state.p._id])
+
 
   const handleDeleteComment = async (postId, commentId) => {
     const updatedPost = await profileService.deleteComment(postId, commentId)
     setPost(post.map(p => 
       p._id === updatedPost._id ? updatedPost : p ))
-  }
+    }
+    console.log(props.post[1]._id)
+    console.log(location.state.p._id)
+    console.log('this is the comments', -idx)
 
   return(
     <>
     <div className="post-view">
-      <h2>{location.state.p.poster.name}</h2>
+      <h2>{thisPost.poster.name}</h2>
       <h3>{thisPost.question}</h3>
       <p>{thisPost.elaboration}</p>
       {
-        props.user.profile === location.state.p.poster._id ?
+        props.user.profile === thisPost.poster._id ?
         <>
         <Link to='/post-edit' state={{ thisPost }}>
             <button>Edit</button>
@@ -44,8 +49,7 @@ const PostView = (props) => {
       <CommentForm 
       handleCreateComment={props.handleCreateComment}
       user={props.user}
-      post={thisPost}/>
-
+      post={post}/>
       {thisPost.comment?
       thisPost.comment.map(c => 
         <div key={c._id}>
@@ -56,7 +60,7 @@ const PostView = (props) => {
       )
       :
       <h1>no comments</h1>
-      }
+    }
 
     </div>
     </>

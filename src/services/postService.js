@@ -30,6 +30,7 @@ async function deletePost(postId) {
 }
 
 async function getPost(postId) {
+  console.log('getting all posts')
   const res = await fetch(`${BASE_URL}/${postId}`,{
     headers: { Authorization: `Bearer ${tokenService.getToken()}`},
   })
