@@ -15,11 +15,14 @@ const AForum = (props) => {
     <h4>Want to post?</h4>
   }
     {androidPosts.map(p => 
-    <Link to='/post' key={p._id} state={{ p }}>
+    <Link to='/post' key={p._id} className='post-link' state={{ p }}>
       <div key={p._id} className='a-post'>
-        <h3>{p.poster.name}</h3>
-        <h4>{p.question}</h4>
-        <p>{p.elaboration}</p>
+        <div className="post-header">
+          <h3>{p.poster.name} Asks : "{p.question}"</h3>
+        </div>
+        <div className="question">
+          <p>{p.elaboration}</p>
+        </div>
       </div>
       <hr />
     </Link>
