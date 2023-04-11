@@ -2,7 +2,7 @@ import { useLocation } from "react-router"
 import React, { useEffect, useState } from "react"
 import { getPost } from '../../services/postService'
 import { Link } from "react-router-dom"
-import * as  profileService from '../../services/postService'
+import * as  postService from '../../services/postService'
 import CommentForm from "../../components/CommentForm/CommentForm"
 
 const PostView = (props) => {
@@ -18,14 +18,15 @@ const PostView = (props) => {
       setPost(postData)
     }
     fetchPostDetails(post)
-  },[thisPost._id])
+  },[thisPost])
 
-
-  const handleDeleteComment = async (postId, commentId) => {
-    const updatedPost = await profileService.deleteComment(postId, commentId)
-    setPost(post.map(p => 
-      p._id === updatedPost._id ? updatedPost : p ))
-    }
+  // const handleDeleteComment = async (postId, commentId) => {
+  //   const updatedPost = await postService.deleteComment(postId, commentId)
+  //   setPost(props.post.map(p => 
+  //     updatedPost._id === p._id ? updatedPost : p 
+  //     ))
+    
+  // }
 
   return(
     <>
@@ -48,12 +49,13 @@ const PostView = (props) => {
       handleCreateComment={props.handleCreateComment}
       user={props.user}
       post={post}/>
-      {thisPost.comment?
+      
+      {thisPost.comment.length?
       thisPost.comment.map(c => 
         <div key={c._id}>
           <h4>{c.author.name}</h4>
           <p>{c.text}</p>
-          <button onClick={() => handleDeleteComment(thisPost._id, c._id)}>Delete</button>
+          <button onClick={() => props.handleDeleteComment(thisPost._id, c._id)}>Delete</button>
         </div>
       )
       :

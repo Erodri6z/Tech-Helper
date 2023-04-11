@@ -71,6 +71,13 @@ function App() {
       newComment : post
     ))
   }
+  const handleDeleteComment = async (postId, commentId) => {
+    const updatedPost = await postService.deleteComment(postId, commentId)
+    setPosts(posts.map(p => 
+      updatedPost._id === p._id ? updatedPost : p 
+      ))
+    
+  }
 
 
   return (
@@ -139,6 +146,7 @@ function App() {
         user={user}
         handleDeletePost={handleDeletePost}
         handleCreateComment={handleCreateComment}
+        handleDeleteComment={handleDeleteComment}
         />
       }
     />
