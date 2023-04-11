@@ -5,7 +5,8 @@ import './Forum.css'
 const AForum = (props) => {
   const posts = props.posts
   const androidPosts = posts.filter(p => p.os === 'ANDROID')
-  const maxLength = 250
+  const maxLengthElaboration = 250
+  const maxLengthQuestion = 75
   return (
     <>
     <h1>Android Forum</h1>
@@ -19,11 +20,15 @@ const AForum = (props) => {
     <Link to='/post' key={p._id} className='post-link' state={{ p }}>
       <div key={p._id} className='a-post'>
         <div className="post-header">
+          {p.question.length > maxLengthQuestion ?
+          <h3>{p.poster.name} Asks : "{p.question.substring(0, maxLengthQuestion)}..."</h3>
+          :
           <h3>{p.poster.name} Asks : "{p.question}"</h3>
+        }
         </div>
         <div className="question">
-          {p.elaboration.length > maxLength ?
-          <p>{p.elaboration.substring(0, maxLength)}...</p>
+          {p.elaboration.length > maxLengthElaboration ?
+          <p>{p.elaboration.substring(0, maxLengthElaboration)}...</p>
           :
           <p>{p.elaboration}</p>
           }
