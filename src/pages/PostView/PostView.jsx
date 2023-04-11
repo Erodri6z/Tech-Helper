@@ -9,20 +9,16 @@ const PostView = (props) => {
   const [post, setPost] = useState([])
   const location = useLocation()
   const idx = props.post.findIndex(post => post._id === location.state.p._id)
-  console.log(location.state.p)
-  console.log(post)
-  console.log(props.post)
   const thisPost = props.post[idx]
-  console.log('thisPost =', thisPost)
-  console.log('idx = ', idx)
+  
   
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const postData = await getPost(location.state.p._id)
+      const postData = await getPost(thisPost._id)
       setPost(postData)
     }
     fetchPostDetails(post)
-  },[location.state.p._id])
+  },[thisPost._id])
 
 
   const handleDeleteComment = async (postId, commentId) => {
@@ -34,7 +30,7 @@ const PostView = (props) => {
   return(
     <>
     <div className="post-view">
-      <h2>{thisPost.poster.name}</h2>
+      <h2>{location.state.p.poster.name}</h2>
       <h3>{thisPost.question}</h3>
       <p>{thisPost.elaboration}</p>
       {
