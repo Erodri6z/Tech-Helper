@@ -8,8 +8,13 @@ import CommentForm from "../../components/CommentForm/CommentForm"
 const PostView = (props) => {
   const [post, setPost] = useState([])
   const location = useLocation()
-  const idx = props.post.indexOf(post => post._id === location.state.p._id)
-  const thisPost = props.post[-idx]
+  const idx = props.post.findIndex(post => post._id === location.state.p._id)
+  console.log(location.state.p)
+  console.log(post)
+  console.log(props.post)
+  const thisPost = props.post[idx]
+  console.log('thisPost =', thisPost)
+  console.log('idx = ', idx)
   
   useEffect(() => {
     const fetchPostDetails = async () => {
@@ -25,9 +30,6 @@ const PostView = (props) => {
     setPost(post.map(p => 
       p._id === updatedPost._id ? updatedPost : p ))
     }
-    console.log(props.post[1]._id)
-    console.log(location.state.p._id)
-    console.log('this is the comments', -idx)
 
   return(
     <>
@@ -36,7 +38,7 @@ const PostView = (props) => {
       <h3>{thisPost.question}</h3>
       <p>{thisPost.elaboration}</p>
       {
-        props.user.profile === thisPost.poster._id ?
+        props.user.profile === thisPost.poster ?
         <>
         <Link to='/post-edit' state={{ thisPost }}>
             <button>Edit</button>
