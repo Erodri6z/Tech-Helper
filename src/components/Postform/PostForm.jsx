@@ -26,6 +26,7 @@ const PostForm = (props) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+    e.target.reset()
     try{
       props.handleAddPost(formData)
     }catch (err) {
