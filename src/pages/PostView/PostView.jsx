@@ -2,7 +2,7 @@ import { useLocation } from "react-router"
 import React, { useEffect, useState } from "react"
 import { getPost } from '../../services/postService'
 import { Link } from "react-router-dom"
-import * as  postService from '../../services/postService'
+// import * as  postService from '../../services/postService'
 import CommentForm from "../../components/CommentForm/CommentForm"
 
 const PostView = (props) => {
@@ -19,14 +19,6 @@ const PostView = (props) => {
     }
     fetchPostDetails(post)
   },[thisPost])
-
-  // const handleDeleteComment = async (postId, commentId) => {
-  //   const updatedPost = await postService.deleteComment(postId, commentId)
-  //   setPost(props.post.map(p => 
-  //     updatedPost._id === p._id ? updatedPost : p 
-  //     ))
-    
-  // }
 
   return(
     <>
