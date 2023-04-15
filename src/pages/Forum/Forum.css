@@ -19,6 +19,20 @@
   text-decoration: none;
 }
 
+.title{
+  font-weight: 500;
+}
+
+
+.title:hover{
+  font-weight: 900;
+  color: red;
+}
+
+.post-link:hover{
+  font-weight: 900;
+}
+
 .question {
   border: 1px solid black;
   background-color: rgb(180, 127, 230);
