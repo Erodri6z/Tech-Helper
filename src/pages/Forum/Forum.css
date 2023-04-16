@@ -25,12 +25,12 @@
   text-decoration: none;
 }
 
-.title{
+.title-post{
   font-weight: 500;
 }
 
 
-.title:hover{
+.title-post:hover{
   font-weight: 900;
   color: red;
 }

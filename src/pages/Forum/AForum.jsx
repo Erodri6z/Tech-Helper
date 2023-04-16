@@ -25,9 +25,9 @@ const AForum = (props) => {
       <div key={p._id} className='a-post'>
         <div className="post-header">
           {p.question.length > maxLengthQuestion ?
-          <h3 className="title">{p.poster.name} Asks : "{p.question.substring(0, maxLengthQuestion)}..."</h3>
+          <h3 className="title-post">{p.poster.name} Asks : "{p.question.substring(0, maxLengthQuestion)}..."</h3>
           :
-          <h3 className="title">{p.poster.name} Asks : "{p.question}"</h3>
+          <h3 className="title-post">{p.poster.name} Asks : "{p.question}"</h3>
         }
         </div>
         <div className="question">
