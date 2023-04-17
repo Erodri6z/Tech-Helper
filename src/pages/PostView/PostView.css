@@ -1,0 +1,14 @@
+.post-view{
+  margin: 45px;
+}
+
+.comment-section{
+  color: darkred;
+  border: solid black 2px;
+  width: 600px;
+  height: 150px;
+  overflow-x: auto;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 10px
+}

@@ -4,6 +4,7 @@ import { getPost } from '../../services/postService'
 import { Link } from "react-router-dom"
 // import * as  postService from '../../services/postService'
 import CommentForm from "../../components/CommentForm/CommentForm"
+import './PostView.css'
 
 const PostView = (props) => {
   const [post, setPost] = useState([])
@@ -30,9 +31,9 @@ const PostView = (props) => {
         props.user.profile === location.state.p.poster._id ?
         <>
         <Link to='/post-edit' state={{ thisPost }}>
-            <button>Edit</button>
+            <button className="edit-button">Edit</button>
         </Link>
-        <button onClick={() => props.handleDeletePost(thisPost._id)}>Delete</button>
+        <button className="delete-button" onClick={() => props.handleDeletePost(thisPost._id)}>Delete</button>
         </>
       :
       <h1>this isnt you post</h1>
@@ -41,10 +42,10 @@ const PostView = (props) => {
       handleCreateComment={props.handleCreateComment}
       user={props.user}
       post={post}/>
-      
+      <div className="comment-section">
       {thisPost.comment.length?
       thisPost.comment.map(c => 
-        <div key={c._id}>
+        <div className="comment" key={c._id}>
           <h4>{c.author.name}</h4>
           <p>{c.text}</p>
           <button onClick={() => props.handleDeleteComment(thisPost._id, c._id)}>Delete</button>
@@ -53,6 +54,7 @@ const PostView = (props) => {
       :
       <h1>no comments</h1>
     }
+    </div>
 
     </div>
     </>
