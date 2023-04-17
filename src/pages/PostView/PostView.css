@@ -1,5 +1,16 @@
 .post-view{
   margin: 45px;
+  width: 600px;
+}
+
+.post-question{
+  width: 624px;
+  overflow-wrap: break-word;
+}
+
+.post-elaboration{
+  width: 600px;
+  overflow-wrap: break-word;
 }
 
 .comment-section{
@@ -7,7 +18,7 @@
   border: solid black 2px;
   width: 600px;
   height: 150px;
-  overflow-x: auto;
+  overflow-y: auto;
   overflow-x: hidden;
   text-align: center;
   padding: 10px

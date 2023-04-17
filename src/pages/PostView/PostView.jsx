@@ -24,9 +24,9 @@ const PostView = (props) => {
   return(
     <>
     <div className="post-view">
-      <h2>{location.state.p.poster.name}</h2>
-      <h3>{thisPost.question}</h3>
-      <p>{thisPost.elaboration}</p>
+      <h2 className="name">{location.state.p.poster.name}</h2>
+      <h3 className="post-question">{thisPost.question}</h3>
+      <p className="post-elaboration">{thisPost.elaboration}</p>
       {
         props.user.profile === location.state.p.poster._id ?
         <>
