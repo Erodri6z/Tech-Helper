@@ -1,13 +1,18 @@
 footer {
   background-color: rgb(140, 140, 140);
   position: fixed;
-  bottom: 0;
+  bottom: -65px;
   left: 0;
   right: 0;
-  animation: dropFooter;
+  transition: bottom 0.5s ease-in-out;
+}
+
+footer:hover{
+  animation: pullUpFooter;
   animation-iteration-count: 1;
-  animation-timing-function: ease-in ;
-  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-duration: .6s;
+  bottom: 0;
 }
 
 
@@ -25,22 +30,11 @@ footer {
 
 @keyframes pullUpFooter {
   0% {
-    transform: translateY(100%);
+    transform: translateY(1000px);
     opacity: 0;
   }
   100% {
     transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes dropFooter {
-  0% {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(100%);
     opacity: 1;
   }
 }
