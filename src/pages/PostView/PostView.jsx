@@ -43,19 +43,18 @@ const PostView = (props) => {
       user={props.user}
       post={post}/>
       <div className="comment-section">
-      {thisPost.comment.length?
-      thisPost.comment.map(c => 
-        <div className="comment" key={c._id}>
-          <h4>{c.author.name}</h4>
-          <p>{c.text}</p>
-          <button onClick={() => props.handleDeleteComment(thisPost._id, c._id)}>Delete</button>
-        </div>
-      )
-      :
-      <h1>no comments</h1>
-    }
-    </div>
-
+        {thisPost.comment.length?
+        thisPost.comment.map(c => 
+          <div className="comment" key={c._id}>
+            <h4>{c.author.name}</h4>
+            <p>{c.text}</p>
+            <button onClick={() => props.handleDeleteComment(thisPost._id, c._id)}>Delete</button>
+          </div>
+        )
+        :
+        <h1>no comments</h1>
+      }
+      </div>
     </div>
     </>
   )
