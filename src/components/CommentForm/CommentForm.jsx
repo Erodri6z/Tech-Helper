@@ -1,4 +1,4 @@
-
+import './CommentForm.css'
 import React, { useState } from "react"
 
 const CommentForm = (props) => {
@@ -26,10 +26,11 @@ const CommentForm = (props) => {
 
   return (
     <>
-    <div>
-      <form autoComplete="off" onSubmit={handleCommentSubmit}>
+    <div className='comment-form'>
+      <form autoComplete="off" onSubmit={handleCommentSubmit} className='comment-entry'>
         <textarea type="text" id="comment-box" name="text" onChange={handleChange}/>
-        <button type="submit" >Submit</button>
+        <br />
+        <button type="submit" className='submit-button' id='submit'>Submit</button>
       </form>
     </div>
     </>
