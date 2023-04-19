@@ -2,6 +2,9 @@ import './PostForm.css'
 import React, { useState } from 'react'
 
 const PostForm = (props) => {
+
+  const PROFANITY_LIST = ['heck', 'darn', 'frick']
+
   const checkPage = () => {
     console.log('this' ,window.location.href)
     if (`${window.location.href}` === 'http://localhost:3000/ios/forum') {
@@ -25,13 +28,23 @@ const PostForm = (props) => {
   }
 
   const handleSubmit = async e => {
-    e.preventDefault()
-    e.target.reset()
-    try{
+    
+    const hasProfinity = PROFANITY_LIST.some(profanity => {
+      return formData.toLowerCase().includes(profanity)
+    })
+    
+    if(hasProfinity) {
+      console.log('no stop swearing bro jesus')
+    } else {
+      e.preventDefault()
+      e.target.reset()
+      try{
       props.handleAddPost(formData)
     }catch (err) {
       console.log(err)
     }
+    }
+    
   }
 
   return(
