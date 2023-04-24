@@ -8,10 +8,7 @@ footer {
 }
 
 footer:hover{
-  animation: pullUpFooter;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
-  animation-duration: .6s;
+  transition: bottom 0.5 ease-in-out;
   bottom: 0;
 }
 
@@ -28,13 +25,3 @@ footer:hover{
   text-decoration: none;
 }
 
-@keyframes pullUpFooter {
-  0% {
-    transform: translateY(1000px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
