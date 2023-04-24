@@ -27,24 +27,31 @@ const PostForm = (props) => {
     })
   }
 
-  const handleSubmit = async e => {
-    
-    const hasProfinity = PROFANITY_LIST.some(profanity => {
-      return formData.toLowerCase().includes(profanity)
+
+  const checkProfanity = (formData) => {
+    const lowerCaseText = formData.toLowerCase()
+    const hasProfanity = PROFANITY_LIST.some((profanity) => {
+      return lowerCaseText.includes(profanity)
     })
-    
-    if(hasProfinity) {
-      console.log('no stop swearing bro jesus')
+    console.log(hasProfanity)
+    if (hasProfanity) {
+      console.log('Swear word detected!');
     } else {
-      e.preventDefault()
-      e.target.reset()
-      try{
+      console.log('No profanity found.');
+    }
+  }
+
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    e.target.reset()
+    // checkProfanity(formData)
+    try{
+      checkProfanity(formData.question)
       props.handleAddPost(formData)
     }catch (err) {
       console.log(err)
     }
-    }
-    
   }
 
   return(
@@ -57,6 +64,7 @@ const PostForm = (props) => {
         <br />
         <textarea type="text" name="elaboration" id="elaboration-box" onChange={handleChange}/>
         <br />
+        <button onClick={() => checkProfanity(formData.question)}>Swear?</button>
         <button className='submit-button'>Submit</button>
       </form>
     </div>
