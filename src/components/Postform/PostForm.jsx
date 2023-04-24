@@ -34,21 +34,15 @@ const PostForm = (props) => {
       return lowerCaseText.includes(profanity)
     })
     return hasProfanity
-    // if (hasProfanity) {
-    //   console.log('Swear word detected!');
-    // } else {
-    //   console.log('No profanity found.');
-    // }
   }
 
   
   const handleSubmit = (e) => {
     e.target.reset()
     e.preventDefault()
-    // console.log(checkProfanity(formData.elaboration))
     try{
       if ((checkProfanity(formData.question)) || (checkProfanity(formData.elaboration))){
-        console.log('this cant be posted, potty mouth')
+        alert('this cant be posted, potty mouth')
       }else {
         props.handleAddPost(formData)
       }
