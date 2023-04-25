@@ -49,12 +49,16 @@ const PostView = (props) => {
       :
       <h1>this isnt you post</h1>
       :
-      <h1>Sign in to post</h1>
+      <span></span>
       }
+      {props.user?
       <CommentForm 
       handleCreateComment={props.handleCreateComment}
       user={props.user}
       post={post}/>
+      :
+      <p>Sign in to comment</p>
+      }
       <div className="comment-section">
         {thisPost.comment.length?
         thisPost.comment.map(c => 
