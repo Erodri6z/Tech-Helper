@@ -27,7 +27,7 @@ const PostView = (props) => {
       <h2 className="name">{location.state.p.poster.name}</h2>
       <h3 className="post-question">{thisPost.question}</h3>
       <p className="post-elaboration">{thisPost.elaboration}</p>
-      {
+      {props.user?
         props.user.profile === location.state.p.poster._id ?
         <>
         <Link to='/post-edit' state={{ thisPost }}>
@@ -48,6 +48,8 @@ const PostView = (props) => {
         </>
       :
       <h1>this isnt you post</h1>
+      :
+      <h1>Sign in to post</h1>
       }
       <CommentForm 
       handleCreateComment={props.handleCreateComment}
