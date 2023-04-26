@@ -7,6 +7,17 @@ const AForum = (props) => {
   const androidPosts = posts.filter(p => p.os === 'ANDROID')
   const maxLengthElaboration = 250
   const maxLengthQuestion = 75
+
+  const sortArr = (arr) => {
+    return arr.sort((a, b) => {
+      if(arr.indexOf(a) > arr.indexOf(b)) return -1
+      if(arr.indexOf(a) < arr.indexOf(b)) return 1
+      return 0
+    })
+  }
+
+  const aPost = sortArr(androidPosts)
+
   return (
     <>
     <h1 className="logo" id="android-logo">
@@ -20,7 +31,7 @@ const AForum = (props) => {
     :
     <h4>Want to post?</h4>
   }
-    {androidPosts.map(p => 
+    {aPost.map(p => 
     <Link to='/post' key={p._id} className='post-link' state={{ p }}>
       <div key={p._id} className='a-post'>
         <div className="post-header">
