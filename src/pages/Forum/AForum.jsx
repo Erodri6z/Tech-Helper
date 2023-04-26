@@ -7,9 +7,7 @@ const AForum = (props) => {
   const androidPosts = posts.filter(p => p.os === 'ANDROID')
   const maxLengthElaboration = 250
   const maxLengthQuestion = 75
-
-
-  const aPost = props.sortArr(androidPosts)
+  const aPosts = props.sortArr(androidPosts)
 
   return (
     <>
@@ -24,7 +22,7 @@ const AForum = (props) => {
     :
     <h4>Want to post?</h4>
   }
-    {aPost.map(p => 
+    {aPosts.map(p => 
     <Link to='/post' key={p._id} className='post-link' state={{ p }}>
       <div key={p._id} className='a-post'>
         <div className="post-header">

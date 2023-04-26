@@ -8,6 +8,8 @@ const IForum = (props) => {
   const iosPosts = posts.filter(p => p.os === 'IOS')
   const maxLengthElaboration = 250
   const maxLengthQuestion = 75
+  const iPosts = props.sortArr(iosPosts)
+
   return (
     <>
     <h1 className="logo" id="apple-logo">
@@ -22,7 +24,7 @@ const IForum = (props) => {
     :
     <h4>Want to post?</h4>
   }
-    {iosPosts.map(p => 
+    {iPosts.map(p => 
     <Link to='/post' key={p._id} className='post-link' state={{ p }}>
       <div key={p._id} className='a-post'>
         <div className="post-header">
