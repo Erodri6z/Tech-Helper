@@ -20,19 +20,6 @@ import PostEdit from './pages/PostEdit/PostEdit';
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [posts, setPosts] = useState([])
-  // const PROFANITY_LIST = ['frick', 'heck', 'darn']
-
-  // const checkProfanity = (text) => {
-  //   const lowerCaseText = text.lowerCase()
-  //   const hasProfanity = PROFANITY_LIST.some((profanity) => {
-  //     return lowerCaseText.includes(profanity)
-  //   })
-  //   hasProfanity?
-  //   console.log('swear')
-  //   :
-  //   console.log('clean')
-  // }
-
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -87,10 +74,16 @@ function App() {
     const updatedPost = await postService.deleteComment(postId, commentId)
     setPosts(posts.map(p => 
       updatedPost._id === p._id ? updatedPost : p 
-      ))
-    
+    ))
   }
 
+  const sortArr = (arr) => {
+    return arr.sort((a, b) => {
+      if(arr.indexOf(a) > arr.indexOf(b)) return -1
+      if(arr.indexOf(a) < arr.indexOf(b)) return 1
+      return 0
+    })
+  }
 
   return (
   <>
@@ -137,6 +130,7 @@ function App() {
       handleAddPost={handleAddPost}
       posts={posts}
       user={user}
+      sortArr={sortArr}
       />
     }
     />
@@ -147,6 +141,7 @@ function App() {
       user={user}
       handleAddPost={handleAddPost}
       posts={posts}
+      sortArr={sortArr}
       />
     }
     />

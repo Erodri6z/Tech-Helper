@@ -8,15 +8,8 @@ const AForum = (props) => {
   const maxLengthElaboration = 250
   const maxLengthQuestion = 75
 
-  const sortArr = (arr) => {
-    return arr.sort((a, b) => {
-      if(arr.indexOf(a) > arr.indexOf(b)) return -1
-      if(arr.indexOf(a) < arr.indexOf(b)) return 1
-      return 0
-    })
-  }
 
-  const aPost = sortArr(androidPosts)
+  const aPost = props.sortArr(androidPosts)
 
   return (
     <>
