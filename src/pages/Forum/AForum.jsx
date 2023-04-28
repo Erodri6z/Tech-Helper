@@ -9,6 +9,11 @@ const AForum = (props) => {
   const maxLengthQuestion = 75
   const aPosts = props.sortArr(androidPosts)
 
+  const togglePostEntry = () => {
+    const postEntryOn = document.querySelector('.post-entry')
+    postEntryOn.classList.toggle('on-mode')
+  }
+
   return (
     <>
     <h1 className="logo" id="android-logo">
@@ -18,7 +23,9 @@ const AForum = (props) => {
     </h1>
     <div className="forum">
     { props.user ?
-    <PostForm handleAddPost={props.handleAddPost}/>
+    <><button onClick={togglePostEntry}>Want to post? Click here!</button>
+    <PostForm handleAddPost={props.handleAddPost} />
+    </>
     :
     <h4>Want to post?</h4>
   }
