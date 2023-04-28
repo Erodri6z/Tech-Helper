@@ -24,10 +24,12 @@ const AForum = (props) => {
     <div className="forum">
     { props.user ?
     <><button className="toggle-btn" onClick={btnToggle}>Want to post? Click here!</button>
-    <PostForm handleAddPost={props.handleAddPost} togglePostEntry={props.togglePostEntry}/>
+    <PostForm handleAddPost={props.handleAddPost} btnToggle={btnToggle}/>
     </>
     :
-    <h4>Want to post?</h4>
+    <h4>
+      Want to post? <Link className='signon signin-to-post' to="/signup" >Sign Up</Link> or <Link className='signon signin-to-post' to="/login" >Login!</Link>
+    </h4>
   }
     {aPosts.map(p => 
     <Link to='/post' key={p._id} className='post-link' state={{ p }}>

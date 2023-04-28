@@ -30,7 +30,9 @@ const IForum = (props) => {
     <PostForm handleAddPost={props.handleAddPost} btnToggle={btnToggle} />
     </>
     :
-    <h4>Want to post?</h4>
+    <h4>
+      Want to post? <Link className='signon signin-to-post' to="/signup" >Sign Up </Link>or <Link className='signon signin-to-post' to="/login">Login! </Link>
+    </h4>
   }
     {iPosts.map(p => 
     <Link to='/post' key={p._id} className='post-link' state={{ p }}>
