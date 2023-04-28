@@ -1,10 +1,9 @@
-/* .post-entry{
-  animation: flip-out-hor-top 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-  margin-bottom: -60px;
-} */
+.post-entry{
+  animation: flip-in-hor-top 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
 
-.post-entry {
-  animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.on-mode {
+  display: none;
 }
 
 .form{
