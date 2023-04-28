@@ -27,7 +27,7 @@ const IForum = (props) => {
     { props.user ?
     <>
     <button className="toggle-btn" onClick={btnToggle}>Want to post? Click here!</button>
-    <PostForm handleAddPost={props.handleAddPost} togglePostEntry={props.togglePostEntry} />
+    <PostForm handleAddPost={props.handleAddPost} btnToggle={btnToggle} />
     </>
     :
     <h4>Want to post?</h4>
