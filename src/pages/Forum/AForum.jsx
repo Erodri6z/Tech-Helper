@@ -9,9 +9,9 @@ const AForum = (props) => {
   const maxLengthQuestion = 75
   const aPosts = props.sortArr(androidPosts)
 
-  const togglePostEntry = () => {
-    const postEntryOn = document.querySelector('.post-entry')
-    postEntryOn.classList.toggle('off-mode')
+  const btnToggle = () => {
+    props.togglePostEntry()
+    props.toggleBtn()
   }
 
   return (
@@ -23,8 +23,8 @@ const AForum = (props) => {
     </h1>
     <div className="forum">
     { props.user ?
-    <><button onClick={togglePostEntry}>Want to post? Click here!</button>
-    <PostForm handleAddPost={props.handleAddPost} />
+    <><button className="toggle-btn" onClick={btnToggle}>Want to post? Click here!</button>
+    <PostForm handleAddPost={props.handleAddPost} togglePostEntry={props.togglePostEntry}/>
     </>
     :
     <h4>Want to post?</h4>

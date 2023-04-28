@@ -85,6 +85,17 @@ function App() {
     })
   }
 
+  const togglePostEntry = () => {
+    const postEntryOn = document.querySelector('.post-entry')
+    postEntryOn.classList.toggle('off-mode')
+  }
+
+  const toggleBtn = () => {
+    const hideBtn = document.querySelector('.toggle-btn')
+    hideBtn.classList.toggle('hide-btn')
+  }
+
+
   return (
   <>
   <Head user={user} handleLogout={handleLogout}/>
@@ -131,6 +142,8 @@ function App() {
       posts={posts}
       user={user}
       sortArr={sortArr}
+      togglePostEntry={togglePostEntry}
+      toggleBtn={toggleBtn}
       />
     }
     />
@@ -142,6 +155,8 @@ function App() {
       handleAddPost={handleAddPost}
       posts={posts}
       sortArr={sortArr}
+      togglePostEntry={togglePostEntry}
+      toggleBtn={toggleBtn}
       />
     }
     />
