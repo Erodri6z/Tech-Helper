@@ -52,7 +52,7 @@ const PostForm = (props) => {
   }
 
   return(
-    <div className="post-entry">
+    <div className="post-entry off-mode">
       <form autoComplete="off" className='form' onSubmit={handleSubmit}>
         <label>
           <p>Whats on your mind?</p>

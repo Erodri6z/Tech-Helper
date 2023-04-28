@@ -2,7 +2,7 @@
   animation: flip-in-hor-top 0.45s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
-.on-mode {
+.off-mode {
   display: none;
 }
 

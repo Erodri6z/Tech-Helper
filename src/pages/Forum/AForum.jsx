@@ -11,7 +11,7 @@ const AForum = (props) => {
 
   const togglePostEntry = () => {
     const postEntryOn = document.querySelector('.post-entry')
-    postEntryOn.classList.toggle('on-mode')
+    postEntryOn.classList.toggle('off-mode')
   }
 
   return (
