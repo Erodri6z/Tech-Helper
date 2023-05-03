@@ -30,6 +30,7 @@ const PostView = (props) => {
       {props.user?
         props.user.profile === location.state.p.poster._id ?
         <>
+        {/* TO-DO: Find out why after edit the poster name doesnt render until refresh */}
         <Link to='/post-edit' state={{ thisPost }}>
             <button className="edit-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -38,6 +39,7 @@ const PostView = (props) => {
               Edit
             </button>
         </Link>
+        {/* TO-DO: refactor this, theres a bug that doesnt render the forum after this action */}
         <button className="delete-button" onClick={() => props.handleDeletePost(thisPost._id)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
@@ -52,6 +54,7 @@ const PostView = (props) => {
       <span></span>
       }
       {props.user?
+      // TO-DO: add an option to hide or show this form
       <CommentForm 
       handleCreateComment={props.handleCreateComment}
       user={props.user}
