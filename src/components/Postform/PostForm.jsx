@@ -53,7 +53,7 @@ const PostForm = (props) => {
 
   return(
     <div className="post-entry off-mode">
-      <button onClick={props.btnToggle}>X</button>
+      <button id="hide-entry" onClick={props.btnToggle}>X</button>
       <form autoComplete="off" className='form' onSubmit={handleSubmit}>
         <label>
           <p>Whats on your mind?</p>

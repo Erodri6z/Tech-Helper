@@ -42,6 +42,13 @@
   text-align: center;
 }
 
+#hide-entry {
+  border: 0px;
+  background-color: transparent;
+  color: red;
+  font-weight: 900;
+}
+
 @keyframes flip-in-hor-top {
   0% {
     transform: rotateX(-80deg);
