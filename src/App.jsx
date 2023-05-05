@@ -95,7 +95,10 @@ function App() {
     hideBtn.classList.toggle('hide-btn')
   }
 
-
+  const commentToggle = () => {
+    const commentOn = document.querySelector('.comment-form')
+    commentOn.classList.toggle('off-mode')
+  }
 
 
   return (
@@ -171,6 +174,7 @@ function App() {
         handleDeletePost={handleDeletePost}
         handleCreateComment={handleCreateComment}
         handleDeleteComment={handleDeleteComment}
+        commentToggle={commentToggle}
         />
       }
     />
