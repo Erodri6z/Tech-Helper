@@ -26,7 +26,7 @@ const CommentForm = (props) => {
 
   return (
     <>
-    <div className='comment-form'>
+    <div className='comment-form off-mode'>
       <form autoComplete="off" onSubmit={handleCommentSubmit} className='comment-entry'>
         <textarea type="text" id="comment-box" name="text" onChange={handleChange}/>
         <br />

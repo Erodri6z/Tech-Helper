@@ -56,7 +56,8 @@ const PostView = (props) => {
       {props.user?
       // TO-DO: add an option to hide or show this form
       <>
-      <button className="c-toggle-button" onClick={props.commentToggle}> Have A Solution?</button>
+      <br />
+      <button className="c-toggle-button" onClick={props.commentToggle}>Comment</button>
       <CommentForm 
       handleCreateComment={props.handleCreateComment}
       user={props.user}
