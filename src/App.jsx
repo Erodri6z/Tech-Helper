@@ -46,11 +46,11 @@ function App() {
     setPosts([...posts, newPost])
   }
 
-  const handleDeletePost = async postId => {
+  const handleDeletePost = async (postId) => {
     const deletedPost = await postService.deletePost(postId)
     const newPostArray = posts.filter(post => post._id !== deletedPost._id)
     setPosts(newPostArray)
-    navigate(-1)
+    navigate(-2)
   }
 
   const handleUpdatePost = async (postData) => {

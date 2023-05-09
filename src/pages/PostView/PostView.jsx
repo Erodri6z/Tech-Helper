@@ -12,7 +12,6 @@ const PostView = (props) => {
   const idx = props.post.findIndex(post => post._id === location.state.p._id)
   const thisPost = props.post[idx]
   
-  
   useEffect(() => {
     const fetchPostDetails = async () => {
       const postData = await getPost(thisPost._id)
@@ -21,6 +20,8 @@ const PostView = (props) => {
     fetchPostDetails(post)
   },[thisPost])
 
+  console.log(location.state.p)
+  
   return(
     <>
     <div className="post-view">
