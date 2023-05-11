@@ -169,7 +169,7 @@ function App() {
       path='/post'
       element={
         <PostView
-        post={posts}
+        // post={posts}
         user={user}
         handleDeletePost={handleDeletePost}
         handleCreateComment={handleCreateComment}

@@ -9,8 +9,9 @@ import './PostView.css'
 const PostView = (props) => {
   const [post, setPost] = useState([])
   const location = useLocation()
-  const idx = props.post.findIndex(post => post._id === location.state.p._id)
-  const thisPost = props.post[idx]
+  // const idx = props.post.findIndex(post => post._id === location.state.p._id)
+  const thisPost = location.state.p
+  
   
   useEffect(() => {
     const fetchPostDetails = async () => {
@@ -18,18 +19,17 @@ const PostView = (props) => {
       setPost(postData)
     }
     fetchPostDetails(post)
-  },[thisPost])
-
-  console.log(location.state.p)
+  },[thisPost.comment])  
   
+  console.log()
   return(
     <>
     <div className="post-view">
-      <h2 className="name">{location.state.p.poster.name}</h2>
+      <h2 className="name">{thisPost.poster.name}</h2>
       <h3 className="post-question">{thisPost.question}</h3>
       <p className="post-elaboration">{thisPost.elaboration}</p>
       {props.user?
-        props.user.profile === location.state.p.poster._id ?
+        props.user.profile === thisPost.poster._id ?
         <>
         {/* TO-DO: Find out why after edit the poster name doesnt render until refresh */}
         <Link to='/post-edit' state={{ thisPost }}>

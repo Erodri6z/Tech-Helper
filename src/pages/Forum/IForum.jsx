@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import PostForm from "../../components/Postform/PostForm"
-
+import React from "react"
 import './Forum.css'
 
 const IForum = (props) => {
@@ -9,6 +9,8 @@ const IForum = (props) => {
   const maxLengthElaboration = 250
   const maxLengthQuestion = 75
   const iPosts = props.sortArr(iosPosts)
+
+  
   
   const btnToggle = () => {
     props.togglePostEntry()

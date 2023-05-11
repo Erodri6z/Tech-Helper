@@ -1,5 +1,6 @@
 import PostForm from "../../components/Postform/PostForm"
 import { Link } from "react-router-dom"
+import React, { useEffect } from "react"
 import './Forum.css'
 
 const AForum = (props) => {
@@ -8,6 +9,7 @@ const AForum = (props) => {
   const maxLengthElaboration = 250
   const maxLengthQuestion = 75
   const aPosts = props.sortArr(androidPosts)
+
 
   const btnToggle = () => {
     props.togglePostEntry()
