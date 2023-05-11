@@ -9,8 +9,9 @@ import './PostView.css'
 const PostView = (props) => {
   const [post, setPost] = useState([])
   const location = useLocation()
-  // const idx = props.post.findIndex(post => post._id === location.state.p._id)
+  const idx = props.post.findIndex(post => post._id === location.state.p._id)
   const thisPost = location.state.p
+  const p = props.post[idx]
   
   
   useEffect(() => {
@@ -18,8 +19,8 @@ const PostView = (props) => {
       const postData = await getPost(thisPost._id)
       setPost(postData)
     }
-    fetchPostDetails(post)
-  },[thisPost.comment])  
+    fetchPostDetails(thisPost)
+  },[post._id])  
   
   console.log()
   return(
@@ -68,8 +69,8 @@ const PostView = (props) => {
       <p>Sign in to comment</p>
       }
       <div className="comment-section">
-        {thisPost.comment.length?
-        thisPost.comment.map(c => 
+        {p?.comment.length?
+        p.comment.map(c => 
           <div className="comment" key={c._id}>
             <h4>{c.author.name}</h4>
             <p>{c.text}</p>
