@@ -36,7 +36,8 @@ const IForum = (props) => {
       Want to post? <Link className='signon signin-to-post' to="/signup" >Sign Up </Link>or <Link className='signon signin-to-post' to="/login">Login! </Link>
     </h4>
   }
-    {iPosts.map(p => 
+    {iPosts.length?
+    iPosts.map(p => 
     <Link to='/post' key={p._id} className='post-link' state={{ p }}>
       <div key={p._id} className='a-post'>
         <div className="post-header">
@@ -56,7 +57,10 @@ const IForum = (props) => {
       </div>
       <hr />
     </Link>
-    )}
+    )
+    :
+    <h1>No Posts Yet</h1>
+  }
     </div>
     </>
   )

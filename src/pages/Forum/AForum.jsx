@@ -33,7 +33,8 @@ const AForum = (props) => {
       Want to post? <Link className='signon signin-to-post' to="/signup" >Sign Up</Link> or <Link className='signon signin-to-post' to="/login" >Login!</Link>
     </h4>
   }
-    {aPosts.map(p => 
+    {aPosts.length?
+    aPosts.map(p => 
     <Link to='/post' key={p._id} className='post-link' state={{ p }}>
       <div key={p._id} className='a-post'>
         <div className="post-header">
@@ -53,7 +54,10 @@ const AForum = (props) => {
       </div>
       <hr />
     </Link>
-    )}
+    )
+    :
+    <h1>No Posts Yet</h1>
+  }
     </div>
     </>
   )
