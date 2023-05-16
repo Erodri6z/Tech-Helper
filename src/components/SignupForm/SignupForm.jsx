@@ -94,8 +94,9 @@ const SignupForm = props => {
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="photo-upload" className={styles.label}>
+      {/* gonna save this because not sure if I want this feature yet */}
+      {/* <div className={styles.inputContainer}> */}
+        {/* <label htmlFor="photo-upload" className={styles.label}>
           Upload Photo
         </label>
         <input
@@ -104,7 +105,7 @@ const SignupForm = props => {
           name="photo"
           onChange={handleChangePhoto}
         />
-      </div>
+      </div> */}
       <div className={styles.inputContainer}>
         <button disabled={isFormInvalid()} className={styles.button}>
           Sign Up
