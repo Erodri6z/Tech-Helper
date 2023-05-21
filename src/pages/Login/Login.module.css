@@ -1,5 +1,12 @@
 .container {
+  border: 1px solid black;
   display: flex;
-  align-items: center;
+  align-items: left;
+  margin: 10px auto;
+  padding: 30px;
+  width: fit-content;
   flex-direction: column;
 }
+
+
+

@@ -13,25 +13,7 @@ const SignupForm = props => {
   })
   const [photoData, setPhotoData] = useState({})
   
-  // const run = () => {
-  //   const btn = document.querySelector('#btn');
-  //   const leftValue = btn.styles.left;
-  
-  //   if (!leftValue) {
-  //     btn.styles.left = '500px';
-  //   } else {
-  //     const posLeft = parseInt(leftValue);
-  
-  //     if (posLeft >= 800) {
-  //       btn.styles.left = '200px';
-  //     } else if (posLeft > 450) {
-  //       const newPosLeft = posLeft + 150;
-  //       btn.styles.left = `${newPosLeft}px`;
-  //     }
-  //   }
-  // };
 
-  // run()
 
   const handleChange = e => {
     props.updateMessage('') 
@@ -145,9 +127,9 @@ const SignupForm = props => {
         <button disabled={isFormInvalid()} className={styles.button} id="btn" >
           Sign Up
         </button>
-          {/* <Link to="/">
+          <Link to="/">
             <button className={styles.signupCancel}>Cancel</button>
-          </Link> */}
+          </Link>
       </div>
     </form>
   )
