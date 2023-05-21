@@ -1,5 +1,6 @@
 footer {
-  background-color: rgb(140, 140, 140);
+  background-color: rgb(0, 0, 0);
+  border: 1px solid #00ffff;
   position: fixed;
   bottom: -65px;
   left: 0;

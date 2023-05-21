@@ -1,6 +1,6 @@
 .i-options{
   padding: 10px;
-  border: 3px solid black;
+  border: 3px solid #00ffff;
   border-radius: 13px;
   width: 250px;
   text-align: center;
@@ -14,15 +14,15 @@
 
 .i-link{
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .i-title{
   text-align: center;
 }
 
-.out-of-service{
-  border: 2px solid black;
+.out-of-service {
+  border: 1px solid white;
   padding: 10px;
   width: fit-content;
   margin: auto;
