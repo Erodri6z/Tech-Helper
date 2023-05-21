@@ -12,6 +12,26 @@ const SignupForm = props => {
     passwordConf: '',
   })
   const [photoData, setPhotoData] = useState({})
+  
+  // const run = () => {
+  //   const btn = document.querySelector('#btn');
+  //   const leftValue = btn.styles.left;
+  
+  //   if (!leftValue) {
+  //     btn.styles.left = '500px';
+  //   } else {
+  //     const posLeft = parseInt(leftValue);
+  
+  //     if (posLeft >= 800) {
+  //       btn.styles.left = '200px';
+  //     } else if (posLeft > 450) {
+  //       const newPosLeft = posLeft + 150;
+  //       btn.styles.left = `${newPosLeft}px`;
+  //     }
+  //   }
+  // };
+
+  // run()
 
   const handleChange = e => {
     props.updateMessage('') 
@@ -25,6 +45,15 @@ const SignupForm = props => {
   //   setPhotoData({ photo: evt.target.files[0] })
   // }
 
+  const checkDisabled = () => {
+    if (document.getElementById('button').disabled) {
+      return true
+    }else{
+      return false
+    }
+  }
+
+  
   const handleSubmit = async e => {
     e.preventDefault()
     try {
@@ -37,15 +66,16 @@ const SignupForm = props => {
   }
 
   const { name, email, password, passwordConf } = formData
-
+  
   const isFormInvalid = () => {
     return !(name && email && password && password === passwordConf)
   }
 
+
   return (
     <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
+    autoComplete="off"
+    onSubmit={handleSubmit}
       className={styles.container}
     >
       <div className={styles.inputContainer}>
@@ -58,7 +88,7 @@ const SignupForm = props => {
           value={name}
           name="name"
           onChange={handleChange}
-        />
+          />
       </div>
       <div className={styles.inputContainer}>
         <label htmlFor="email" className={styles.label}>Email</label>
@@ -82,7 +112,7 @@ const SignupForm = props => {
           value={password}
           name="password"
           onChange={handleChange}
-        />
+          />
       </div>
       <div className={styles.inputContainer}>
         <label htmlFor="confirm" className={styles.label}>
@@ -102,21 +132,22 @@ const SignupForm = props => {
       {/* <div className={styles.inputContainer}> */}
         {/* <label htmlFor="photo-upload" className={styles.label}>
           Upload Photo
-        </label>
-        <input
+          </label>
+          <input
           type="file"
           id="photo-upload"
           name="photo"
           onChange={handleChangePhoto}
           />
-      </div> */}
+        </div> */}
       <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
+        
+        <button disabled={isFormInvalid()} className={styles.button} id="btn" >
           Sign Up
         </button>
-          <Link to="/">
-            <button className='signup-cancel'>Cancel</button>
-          </Link>
+          {/* <Link to="/">
+            <button className={styles.signupCancel}>Cancel</button>
+          </Link> */}
       </div>
     </form>
   )

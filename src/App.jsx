@@ -101,6 +101,8 @@ function App() {
   }
 
 
+
+
   return (
   <>
   <Head user={user} handleLogout={handleLogout}/>
@@ -119,7 +121,11 @@ function App() {
     />
     <Route
     path="/signup"
-    element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
+    element={
+    <Signup 
+      handleSignupOrLogin={handleSignupOrLogin} 
+      />
+    }
     />
     <Route
     path="/login"
