@@ -4,6 +4,8 @@
   resize: none;
   font-family: 'Source Code Pro', monospace;
   background-color: black;
+  color: rgb(54, 168, 12);
+  caret-color: red;
   border:1px solid white;
 }
 
