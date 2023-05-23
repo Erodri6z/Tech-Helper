@@ -3,19 +3,22 @@
   width: 600px;
 }
 
+
 .post-question{
   width: 624px;
+  color: white;
   overflow-wrap: break-word;
 }
 
 .post-elaboration{
+  color: rgb(39, 217, 39);
   width: 600px;
   overflow-wrap: break-word;
 }
 
 .comment-section{
-  color: darkred;
-  border: solid black 2px;
+  color: rgb(255, 0, 0);
+  border: solid #00ffff 2px;
   width: 600px;
   height: 150px;
   overflow-y: auto;
@@ -25,8 +28,9 @@
 }
 
 .c-toggle-button {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
   border: 1px solid rgb(54, 168, 12);
+  color: white;
   padding: 10px;
   font-weight: 900;
   font-size: 14px;
@@ -39,7 +43,8 @@
 }
 
 .edit-button {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  color: white;
   border: 1px solid rgb(0, 89, 255);
   padding: 10px;
   font-weight: 900;
@@ -48,7 +53,8 @@
 }
 
 .delete-button {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  color: white;
   border: 1px solid rgb(255, 6, 6);
   padding: 10px;
   font-weight: 900;

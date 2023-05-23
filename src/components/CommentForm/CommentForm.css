@@ -3,6 +3,8 @@
   padding: 10px;
   resize: none;
   font-family: 'Source Code Pro', monospace;
+  background-color: black;
+  border:1px solid white;
 }
 
 .comment-form {
