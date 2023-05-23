@@ -95,3 +95,28 @@
   background-color: transparent;
   color: rgb(255, 31, 31);
 }
+
+@media (max-width : 750px) {
+  .post-view{
+    width: 300px;
+    max-width: 300px;
+    margin-left: 10px;
+  }
+  
+  .comment-section{
+    min-width: 300px;
+    width: 300px;
+    height: 400px;
+    max-width: 600px;
+    margin: 10px 30px
+  }
+  .post-question, .post-elaboration{
+    max-width: 300px;
+  }
+  .comment-text{
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 0px;
+    width: 250px;
+  }
+}
