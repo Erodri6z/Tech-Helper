@@ -21,6 +21,16 @@
   justify-content: left;
 }
 
+.logout{
+  color: white;
+  text-decoration: none
+}
+
+.logout:hover{
+  font-weight: 800;
+}
+
+
 li{
   /* color: white; */
   margin: auto;

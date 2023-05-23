@@ -6,9 +6,9 @@ const Head = ({user, handleLogout}) => {
   return (
   <>
     <div className="heading">
-      <h1 className="title">Tech Helper App</h1>
+      <h1 className="title">Pocket Geeks</h1>
       {user?
-      <li className='logout'><Link to="" onClick={handleLogout}>Logout</Link></li>
+      <li ><Link to="" onClick={handleLogout} className='logout'>Logout</Link></li>
       :
       <>
       <li ><Link className='signon' to="/signup" >Sign Up</Link></li>
