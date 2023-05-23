@@ -5,7 +5,7 @@ import './Footer.css'
 const Footer = () => {
   return (
     <>
-    <footer>
+    <footer className='fullscreen-footer'>
       <ul className='footer-list'>
         <li>
           <Link className='f-item' to="/ios">

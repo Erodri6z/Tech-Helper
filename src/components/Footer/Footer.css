@@ -26,3 +26,9 @@ footer:hover{
   text-decoration: none;
 }
 
+@media (max-width : 750px) {
+  .fullscreen-footer{
+    display: none;
+  }
+}
+
