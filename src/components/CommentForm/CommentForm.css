@@ -16,3 +16,13 @@
 .comment-entry{
   width: 624px;
 }
+
+@media (max-width : 750px) {
+  #comment-box {
+    margin: 10px 30px;
+    width: 300px;
+  }
+  .comment-entry{
+    width: 300px;
+  }
+}
