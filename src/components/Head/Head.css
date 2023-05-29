@@ -36,3 +36,29 @@ li{
   margin: auto;
   list-style: none;
 }
+
+#nav {
+  display: none;
+}
+
+#nav.active{
+  display: flex;
+}
+
+.nav-select{
+  display: none;
+}
+
+@media (max-width : 750px) {
+
+  .nav-select{
+    display: flex;
+    position: absolute;
+    right: 10px;
+  }
+
+  .signon{
+    display: none;
+  }
+  
+}
