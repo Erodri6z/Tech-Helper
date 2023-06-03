@@ -15,7 +15,7 @@
   padding: 10px;
 }
 
-.signon {
+.nav-item {
   text-decoration: none;
   color: rgb(255, 255, 255);
   justify-content: left;
@@ -57,8 +57,14 @@ li{
     right: 10px;
   }
 
-  .signon{
+  .fullscreen-signon{
     display: none;
+  }
+
+  #nav{
+    border: 1px solid #00ffff;
+    justify-content: center;
+    text-align: center;
   }
   
 }
