@@ -42,9 +42,9 @@ const Head = ({user, handleLogout}) => {
     </div>
       <div id='nav'>
         <ul>
-          <li><Link className='nav-item'>Android</Link></li>
-          <li><Link className='nav-item'>Apple</Link></li>
-          <li><Link className='nav-item'>About</Link></li>
+          <li><Link className='nav-item' to="/android">Android</Link></li>
+          <li><Link className='nav-item' to="/ios">Apple</Link></li>
+          <li><Link className='nav-item' to="/about">About</Link></li>
           {user?
           <li><Link to="" onClick={handleLogout} className='logout'>Log Out</Link></li>
           :
