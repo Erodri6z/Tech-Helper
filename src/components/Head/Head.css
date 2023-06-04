@@ -55,6 +55,17 @@ li{
     display: flex;
     position: absolute;
     right: 10px;
+    top: 15px;
+    border: none;
+    background-color: black;
+    color: blue;
+    --on: flex;
+    --off: none
+  }
+
+  .nav-select.button-active{
+    --on: none;
+    --off: flex;
   }
 
   .fullscreen-signon{
@@ -62,11 +73,24 @@ li{
   }
 
   #nav{
+    --on: flex;
+    --off: none;
     border: 1px solid #00ffff;
     justify-content: center;
     text-align: center;
     animation: slide-in-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
+
+
+  #list{
+    display: var(--on);
+  }
+
+  #x{
+    display: var(--off);
+  }
+
+
   
 }
 
