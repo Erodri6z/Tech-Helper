@@ -5,6 +5,7 @@ const PostForm = (props) => {
 
   const PROFANITY_LIST = ['heck', 'darn', 'frick']
 
+  
   const checkPage = () => {
     console.log('this' ,window.location.href)
     if (`${window.location.href}` === 'http://localhost:3000/ios/forum') {

@@ -32,7 +32,6 @@ const PostView = (props) => {
       {props.user?
         props.user.profile === thisPost.poster || thisPost.poster._id ?
         <>
-        {/* TO-DO: Find out why after edit the poster name doesnt render until refresh */}
         <Link to='/post-edit' state={{ thisPost }}>
             <button className="edit-button">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
@@ -67,7 +66,6 @@ const PostView = (props) => {
       <p>Sign in to comment</p>
       }
       <div className="comment-section">
-        {/* {console.log(p.comment)} */}
         {post?.comment?.length?
         post.comment.map(c =>
           <div className="comment" key={c._id}>
