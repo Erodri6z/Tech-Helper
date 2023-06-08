@@ -68,6 +68,14 @@ li{
     --off: flex;
   }
 
+  .nav-list{
+    margin: 12px;
+  }
+
+  .nav-item:hover{
+    font-weight: 900;
+  }
+
   .fullscreen-signon{
     display: none;
   }
