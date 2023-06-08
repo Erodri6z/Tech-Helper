@@ -32,7 +32,7 @@ const Head = ({user, handleLogout}) => {
         </svg>
       </button>
       {user?
-      <li ><Link to="" onClick={handleLogout} className='logout'>Logout</Link></li>
+      <li ><Link to="" onClick={handleLogout} className='logout fullscreen-signon'>Logout</Link></li>
       :
       <>
       <li ><Link className='nav-item fullscreen-signon' to="/signup" >Sign Up</Link></li>
