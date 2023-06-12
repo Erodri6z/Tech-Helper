@@ -30,7 +30,7 @@ const PostView = (props) => {
       <h3 className="post-question">{thisPost.question}</h3>
       <p className="post-elaboration">{thisPost.elaboration}</p>
       {props.user?
-        props.user.profile === thisPost.poster || thisPost.poster._id ?
+        props.user.profile === thisPost.poster._id ?
         <>
         <Link to='/post-edit' state={{ thisPost }}>
             <button className="edit-button">
