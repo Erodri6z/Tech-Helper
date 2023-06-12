@@ -8,7 +8,7 @@ const PostForm = (props) => {
   
   const checkPage = () => {
     console.log('this' ,window.location.href)
-    if (`${window.location.href}` === 'http://localhost:3000/ios/forum') {
+    if (`${window.location.href}` === 'https://pocketgeeks.netlify.app/ios/forum') {
       return 'IOS'
     }
     else {
