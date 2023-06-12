@@ -3,7 +3,7 @@ import "./Landing.css"
 const Landing = () => {
   return (
     <>
-    <h1 className="greeting">Hello this is going to be the landing page</h1>
+    <h1 className="greeting">Welcome to PocketGeeks. What device do you need help with?</h1>
     <div className="home-options">
       <a href="/ios" className="landing-icons">
         <h2>
